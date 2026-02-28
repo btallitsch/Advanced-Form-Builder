@@ -1,0 +1,150 @@
+.canvas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.formHeader {
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  flex-shrink: 0;
+}
+
+.formTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  transition: color var(--transition);
+}
+
+.formTitle:hover { color: var(--accent-hover); }
+
+.formDesc {
+  font-size: 13px;
+  color: var(--text-2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.5;
+  transition: color var(--transition);
+}
+
+.formDesc:hover { color: var(--text); }
+
+.editHint {
+  font-size: 12px;
+  color: var(--text-3);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.formTitle:hover .editHint,
+.formDesc:hover .editHint {
+  opacity: 1;
+}
+
+.titleInput {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  background: var(--accent-dim) !important;
+  border-color: var(--accent) !important;
+  margin-bottom: 6px;
+}
+
+.descInput {
+  font-size: 13px !important;
+  resize: none;
+  background: var(--accent-dim) !important;
+  border-color: var(--accent) !important;
+}
+
+.dropZone {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  transition: background var(--transition);
+  min-height: 200px;
+}
+
+.dropZone.over {
+  background: var(--accent-dim);
+}
+
+.fieldsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.emptyIcon {
+  font-size: 40px;
+  color: var(--border-hover);
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.emptyTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-2);
+  margin-bottom: 8px;
+}
+
+.emptySubtitle {
+  font-size: 13px;
+  color: var(--text-3);
+  line-height: 1.7;
+}
+
+.dropIndicator {
+  text-align: center;
+  color: var(--accent-hover);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 40px;
+  border: 2px dashed var(--accent);
+  border-radius: var(--radius-lg);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--accent);
+  color: white;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: var(--shadow);
+  cursor: grabbing;
+  pointer-events: none;
+}

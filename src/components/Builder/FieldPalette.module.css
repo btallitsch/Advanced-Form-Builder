@@ -1,0 +1,131 @@
+.palette {
+  width: 196px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.header {
+  padding: 16px 14px 8px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.search {
+  padding: 0 10px 10px;
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-60%);
+  color: var(--text-3);
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.searchInput {
+  padding-left: 28px !important;
+  font-size: 12px !important;
+  height: 30px;
+  background: var(--surface-2) !important;
+}
+
+.groups {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 10px 16px;
+}
+
+.group {
+  margin-bottom: 14px;
+}
+
+.groupLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0 4px;
+  margin-bottom: 6px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: grab;
+  transition: all var(--transition);
+  text-align: center;
+  min-height: 54px;
+  user-select: none;
+}
+
+.item:hover {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent-hover);
+}
+
+.item:active {
+  cursor: grabbing;
+}
+
+.item.dragging {
+  opacity: 0.4;
+}
+
+.icon {
+  font-size: 16px;
+  line-height: 1;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--text-2);
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-2);
+  line-height: 1.2;
+}
+
+.item:hover .icon,
+.item:hover .label {
+  color: var(--accent-hover);
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-3);
+  font-size: 12px;
+  padding: 20px;
+}
